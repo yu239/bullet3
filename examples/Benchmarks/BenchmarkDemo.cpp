@@ -1122,9 +1122,23 @@ void BenchmarkDemo::createLargeMeshBody()
 		part.m_vertexBase = (const unsigned char*)LandscapeVtx[i];
 		part.m_vertexStride = sizeof(btScalar) * 3;
 		part.m_numVertices = LandscapeVtxCount[i];
-		part.m_triangleIndexBase = (const unsigned char*)LandscapeIdx[i];
-		part.m_triangleIndexStride = sizeof( short) * 3;
+		//part.m_numTriangles = LandscapeIdxCount[i]/3;
 		part.m_numTriangles = LandscapeIdxCount[i]/3;
+		//part.m_triangleIndexBase = (const unsigned char*)LandscapeIdx[i];
+		int sz       = part.m_numTriangles;
+		int sz_bytes = sizeof(short)*sz*3;
+		part.m_triangleIndexBase = (const unsigned char *) malloc( sz_bytes*2 );
+		memcpy(const_cast<unsigned char*>(part.m_triangleIndexBase)           , LandscapeIdx[i], sz_bytes);
+
+		memcpy(const_cast<unsigned char*>(part.m_triangleIndexBase) + sz_bytes, LandscapeIdx[i], sz_bytes); // dup
+		part.m_numTriangles *= 2;
+		short* modify_me = (short*) (const_cast<unsigned char*>(part.m_triangleIndexBase) + sz_bytes);
+		for (int i=0; i<sz; ++i) {
+			modify_me[3*i + 0] = modify_me[3*i + 2];
+			modify_me[3*i + 1] = modify_me[3*i + 2];
+		}
+
+		part.m_triangleIndexStride = sizeof( short) * 3;
 		part.m_indexType = PHY_SHORT;
 
 		meshInterface->addIndexedMesh(part,PHY_SHORT);
