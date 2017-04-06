@@ -13,12 +13,9 @@ IF(BUILD_PYBULLET_NUMPY)
 	)
 ENDIF()
 
-FILE(GLOB GwenGUISupport_SRCS "../../examples/ExampleBrowser/GwenGUISupport/*" )
-
 SET(c_api_SRCS
 		../../examples/SharedMemory/IKTrajectoryHelper.cpp
 		../../examples/SharedMemory/IKTrajectoryHelper.h
-		../../examples/ExampleBrowser/InProcessExampleBrowser.cpp
 		../../examples/SharedMemory/TinyRendererVisualShapeConverter.cpp
 		../../examples/SharedMemory/TinyRendererVisualShapeConverter.h
 		../../examples/OpenGLWindow/SimpleCamera.cpp
@@ -33,8 +30,6 @@ SET(c_api_SRCS
 		../../examples/SharedMemory/PhysicsClient.h
 		../../examples/SharedMemory/PhysicsServer.cpp
 		../../examples/SharedMemory/PhysicsServer.h
-		../../examples/SharedMemory/PhysicsServerExample.cpp
-		../../examples/SharedMemory/SharedMemoryInProcessPhysicsC_API.cpp
 		../../examples/SharedMemory/PhysicsServerSharedMemory.cpp
 		../../examples/SharedMemory/PhysicsServerSharedMemory.h
 		../../examples/SharedMemory/PhysicsDirect.cpp
@@ -121,40 +116,9 @@ SET(c_api_SRCS
 		../../Extras/Serialize/BulletFileLoader/btBulletFile.cpp
 		../../Extras/Serialize/BulletWorldImporter/btBulletWorldImporter.cpp
 		../../Extras/Serialize/BulletWorldImporter/btWorldImporter.cpp
-
-		../../examples/ExampleBrowser/OpenGLExampleBrowser.cpp
-		../../examples/ExampleBrowser/OpenGLGuiHelper.cpp
-		../../examples/ExampleBrowser/GL_ShapeDrawer.cpp
-		../../examples/ExampleBrowser/CollisionShape2TriangleMesh.cpp
-
-		../../examples/ThirdPartyLibs/Glew/glew.c
-
-		../../examples/OpenGLWindow/TwFonts.cpp
-		../../examples/OpenGLWindow/GLInstancingRenderer.cpp
-		../../examples/OpenGLWindow/GLRenderToTexture.cpp
-		../../examples/OpenGLWindow/SimpleOpenGL2Renderer.cpp
-		../../examples/OpenGLWindow/GLPrimitiveRenderer.cpp
-		../../examples/OpenGLWindow/opengl_fontstashcallbacks.cpp
-		../../examples/OpenGLWindow/LoadShader.cpp
-		../../examples/OpenGLWindow/EGLOpenGLWindow.cpp
-		../../examples/OpenGLWindow/fontstash.cpp
-		../../examples/OpenGLWindow/GLInstancingRenderer.cpp
-		../../examples/OpenGLWindow/GLPrimitiveRenderer.cpp
-		../../examples/OpenGLWindow/GLRenderToTexture.cpp
-		../../examples/OpenGLWindow/LoadShader.cpp
-		../../examples/OpenGLWindow/opengl_fontstashcallbacks.cpp
-		../../examples/OpenGLWindow/OpenSans.cpp
-		../../examples/OpenGLWindow/SimpleCamera.cpp
-		../../examples/OpenGLWindow/SimpleOpenGL2App.cpp
-		../../examples/OpenGLWindow/SimpleOpenGL2Renderer.cpp
-		../../examples/OpenGLWindow/SimpleOpenGL3App.cpp
-		../../examples/OpenGLWindow/TwFonts.cpp
-		../../examples/OpenGLWindow/Win32OpenGLWindow.cpp
-		../../examples/OpenGLWindow/Win32Window.cpp
-		../../examples/OpenGLWindow/X11OpenGLWindow.cpp
-
-		${GwenGUISupport_SRCS}
 )
+
+ADD_DEFINITIONS(-DPHYSICS_SERVER_DIRECT)
 
 SET(pybullet_SRCS
 	pybullet.c
@@ -244,9 +208,13 @@ ENDIF(WIN32)
 
 
 
-TARGET_LINK_LIBRARIES(PhysicsClientC_API BulletSoftBody BulletDynamics BulletCollision BulletInverseDynamics LinearMath Bullet3Common gwen)
+#TARGET_LINK_LIBRARIES(PhysicsClientC_API BulletSoftBody BulletDynamics BulletCollision BulletInverseDynamics LinearMath Bullet3Common)
+TARGET_LINK_LIBRARIES(PhysicsClientC_API BulletSoftBody BulletDynamics BulletCollision BulletInverseDynamics LinearMath Bullet3Common)
+# BulletInverseDynamicsUtils BulletFileLoader BulletWorldImporter)
 
-TARGET_LINK_LIBRARIES(pybullet BulletExampleBrowserLib BulletFileLoader BulletWorldImporter BulletSoftBody BulletDynamics BulletCollision BulletInverseDynamicsUtils BulletInverseDynamics LinearMath OpenGLWindow gwen BussIK Bullet3Common ${PYTHON_LIBRARIES})
+#TARGET_LINK_LIBRARIES(pybullet BulletSoftBody BulletDynamics BulletCollision BulletInverseDynamics LinearMath gwen Bullet3Common ${PYTHON_LIBRARIES})
+
+#TARGET_LINK_LIBRARIES(pybullet BulletExampleBrowserLib BulletFileLoader BulletWorldImporter BulletSoftBody BulletDynamics BulletCollision BulletInverseDynamicsUtils BulletInverseDynamics LinearMath OpenGLWindow gwen BussIK Bullet3Common ${PYTHON_LIBRARIES})
 
 
 IF (INSTALL_LIBS)
