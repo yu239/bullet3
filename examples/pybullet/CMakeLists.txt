@@ -120,9 +120,9 @@ SET(c_api_SRCS
 
 ADD_DEFINITIONS(-DPHYSICS_SERVER_DIRECT)
 
-SET(pybullet_SRCS
-	pybullet.c
-)
+#SET(pybullet_SRCS
+#	pybullet.c
+#)
 
 IF(BUILD_PYBULLET_CLSOCKET)
  ADD_DEFINITIONS(-DBT_ENABLE_CLSOCKET)
@@ -184,15 +184,15 @@ IF(BUILD_PYBULLET_CLSOCKET)
 	)
 ENDIF()
 
-ADD_LIBRARY(pybullet SHARED ${pybullet_SRCS} ${c_api_SRCS})
+#ADD_LIBRARY(pybullet SHARED ${pybullet_SRCS} ${c_api_SRCS})
 ADD_LIBRARY(PhysicsClientC_API ${c_api_SRCS})
 
-SET_TARGET_PROPERTIES(pybullet PROPERTIES PREFIX "")
-SET_TARGET_PROPERTIES(pybullet PROPERTIES POSTFIX "")
+#SET_TARGET_PROPERTIES(pybullet PROPERTIES PREFIX "")
+#SET_TARGET_PROPERTIES(pybullet PROPERTIES POSTFIX "")
 
-SET_TARGET_PROPERTIES(pybullet PROPERTIES VERSION ${BULLET_VERSION})
-SET_TARGET_PROPERTIES(pybullet PROPERTIES SOVERSION ${BULLET_VERSION})
-SET_TARGET_PROPERTIES(pybullet PROPERTIES DEBUG_POSTFIX "_d")
+#SET_TARGET_PROPERTIES(pybullet PROPERTIES VERSION ${BULLET_VERSION})
+#SET_TARGET_PROPERTIES(pybullet PROPERTIES SOVERSION ${BULLET_VERSION})
+#SET_TARGET_PROPERTIES(pybullet PROPERTIES DEBUG_POSTFIX "_d")
 
 SET_TARGET_PROPERTIES(PhysicsClientC_API PROPERTIES VERSION ${BULLET_VERSION})
 SET_TARGET_PROPERTIES(PhysicsClientC_API PROPERTIES SOVERSION ${BULLET_VERSION})
@@ -220,6 +220,11 @@ TARGET_LINK_LIBRARIES(PhysicsClientC_API BulletSoftBody BulletDynamics BulletCol
 IF (INSTALL_LIBS)
 	INSTALL(FILES
 		../../examples/SharedMemory/PhysicsClientC_API.h
+		../../examples/SharedMemory/PhysicsClientSharedMemory_C_API.h
+		../../examples/SharedMemory/PhysicsClientSharedMemory2_C_API.h
+		../../examples/SharedMemory/PhysicsDirectC_API.h
+		../../examples/SharedMemory/PhysicsClientUDP_C_API.h
+		../../examples/SharedMemory/SharedMemoryInProcessPhysicsC_API.h
 		../../examples/SharedMemory/SharedMemoryPublic.h
 		DESTINATION include/bullet
 		)
