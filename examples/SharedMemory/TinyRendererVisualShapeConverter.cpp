@@ -992,6 +992,7 @@ void TinyRendererVisualShapeConverter::resetAll()
 		}
 	}
 	
+	m_data->m_visualShapes.clear();
 	m_data->m_swRenderInstances.clear();
 }
 

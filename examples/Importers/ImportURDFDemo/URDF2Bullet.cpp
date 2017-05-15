@@ -151,8 +151,11 @@ void processContactParameters(const URDFLinkContactInfo& contactInfo, btCollisio
 	}
 	if ((contactInfo.m_flags & URDF_CONTACT_HAS_RESTITUTION) != 0)
 	{
-		col->setRestitution(contactInfo.m_restitution);
+		//col->setRestitution(contactInfo.m_restitution);
 	}
+
+	//fprintf(stderr, "RESTITUTION WAS %0.2lf!\n", col->getRestitution()); -- 0.0
+	col->setRestitution(0.5);
 
 	if ((contactInfo.m_flags & URDF_CONTACT_HAS_ROLLING_FRICTION) != 0)
 	{
