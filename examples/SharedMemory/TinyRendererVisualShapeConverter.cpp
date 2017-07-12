@@ -184,7 +184,7 @@ void convertURDFToVisualShape(const UrdfShape* visual, const char* urdfPathPrefi
 		visualShapeOut.m_rgbaColor[2] = visual->m_geometry.m_localMaterial.m_rgbaColor[2];
 		visualShapeOut.m_rgbaColor[3] = visual->m_geometry.m_localMaterial.m_rgbaColor[3];
 	}
-	
+
 	GLInstanceGraphicsShape* glmesh = 0;
 
 	btConvexShape* convexColShape = 0;
@@ -233,6 +233,8 @@ void convertURDFToVisualShape(const UrdfShape* visual, const char* urdfPathPrefi
 			visualShapeOut.m_dimensions[0] = len;
 			visualShapeOut.m_dimensions[1] = rad;
 
+return; // this makes episode restart much faster
+
 			btAlignedObjectArray<btVector3> vertices;
 			int numSteps = 32;
 			for (int i = 0; i<numSteps; i++)
@@ -260,7 +262,7 @@ void convertURDFToVisualShape(const UrdfShape* visual, const char* urdfPathPrefi
 			visualShapeOut.m_dimensions[0] = visual->m_geometry.m_boxSize[0];
 			visualShapeOut.m_dimensions[1] = visual->m_geometry.m_boxSize[1];
 			visualShapeOut.m_dimensions[2] = visual->m_geometry.m_boxSize[2];
-
+return;
 			btVector3 extents = visual->m_geometry.m_boxSize;
 			
 			btBoxShape* boxShape = new btBoxShape(extents*0.5f);
@@ -272,7 +274,7 @@ void convertURDFToVisualShape(const UrdfShape* visual, const char* urdfPathPrefi
 		case URDF_GEOM_SPHERE:
 		{
 			visualShapeOut.m_dimensions[0] = visual->m_geometry.m_sphereRadius;
-
+return;
 			btScalar radius = visual->m_geometry.m_sphereRadius;
 			btSphereShape* sphereShape = new btSphereShape(radius);
 			convexColShape = sphereShape;
@@ -283,10 +285,10 @@ void convertURDFToVisualShape(const UrdfShape* visual, const char* urdfPathPrefi
 		{
 			strncpy(visualShapeOut.m_meshAssetFileName, visual->m_geometry.m_meshFileName.c_str(), VISUAL_SHAPE_MAX_PATH_LEN);
 			visualShapeOut.m_meshAssetFileName[VISUAL_SHAPE_MAX_PATH_LEN-1] = 0;
-
 			visualShapeOut.m_dimensions[0] = visual->m_geometry.m_meshScale[0];
 			visualShapeOut.m_dimensions[1] = visual->m_geometry.m_meshScale[1];
 			visualShapeOut.m_dimensions[2] = visual->m_geometry.m_meshScale[2];
+return;
 
 			switch (visual->m_geometry.m_meshFileType)
 			{
@@ -415,6 +417,7 @@ void convertURDFToVisualShape(const UrdfShape* visual, const char* urdfPathPrefi
 		} // case mesh
 
 		case URDF_GEOM_PLANE:
+return;
 			// TODO: plane in tiny renderer
 			// TODO: export visualShapeOut for external render
 			break;

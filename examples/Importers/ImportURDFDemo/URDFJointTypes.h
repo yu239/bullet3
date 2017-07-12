@@ -42,7 +42,7 @@ struct URDFLinkContactInfo
 	int m_flags;
 
 	URDFLinkContactInfo()
-		:m_lateralFriction(0.5),
+		:m_lateralFriction(0.8), // 0.8 (was 0.5) is necessery for URDF models to make walk less slippery, no way to define this in a .urdf itself
 		m_rollingFriction(0),
         m_spinningFriction(0),
 		m_restitution(0),
