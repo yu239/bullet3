@@ -30,108 +30,108 @@ INCLUDE_DIRECTORIES(
 )
 
 SET(c_api_SRCS
-		../../examples/SharedMemory/IKTrajectoryHelper.cpp
-		../../examples/SharedMemory/IKTrajectoryHelper.h
-		../../examples/SharedMemory/TinyRendererVisualShapeConverter.cpp
-		../../examples/SharedMemory/TinyRendererVisualShapeConverter.h
-		../../examples/OpenGLWindow/SimpleCamera.cpp
-		../../examples/OpenGLWindow/SimpleCamera.h
-		../../examples/TinyRenderer/geometry.cpp
-		../../examples/TinyRenderer/model.cpp
-		../../examples/TinyRenderer/tgaimage.cpp
-		../../examples/TinyRenderer/our_gl.cpp
-		../../examples/TinyRenderer/TinyRenderer.cpp
-		../../examples/SharedMemory/InProcessMemory.cpp
-		../../examples/SharedMemory/PhysicsClient.cpp
-		../../examples/SharedMemory/PhysicsClient.h
-		../../examples/SharedMemory/PhysicsServer.cpp
-		../../examples/SharedMemory/PhysicsServer.h
-		../../examples/SharedMemory/PhysicsServerSharedMemory.cpp
-		../../examples/SharedMemory/PhysicsServerSharedMemory.h
-		../../examples/SharedMemory/PhysicsDirect.cpp
-		../../examples/SharedMemory/PhysicsDirect.h
-		../../examples/SharedMemory/PhysicsDirectC_API.cpp
-		../../examples/SharedMemory/PhysicsDirectC_API.h
-		../../examples/SharedMemory/PhysicsServerCommandProcessor.cpp
-		../../examples/SharedMemory/PhysicsServerCommandProcessor.h
-		../../examples/SharedMemory/PhysicsClientSharedMemory.cpp
-		../../examples/SharedMemory/PhysicsClientSharedMemory.h
-		../../examples/SharedMemory/PhysicsClientSharedMemory_C_API.cpp
-		../../examples/SharedMemory/PhysicsClientSharedMemory_C_API.h
-		../../examples/SharedMemory/PhysicsClientC_API.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/IKTrajectoryHelper.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/IKTrajectoryHelper.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/TinyRendererVisualShapeConverter.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/TinyRendererVisualShapeConverter.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/OpenGLWindow/SimpleCamera.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/OpenGLWindow/SimpleCamera.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/TinyRenderer/geometry.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/TinyRenderer/model.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/TinyRenderer/tgaimage.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/TinyRenderer/our_gl.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/TinyRenderer/TinyRenderer.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/InProcessMemory.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClient.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClient.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsServer.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsServer.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsServerSharedMemory.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsServerSharedMemory.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsDirect.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsDirect.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsDirectC_API.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsDirectC_API.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsServerCommandProcessor.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsServerCommandProcessor.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClientSharedMemory.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClientSharedMemory.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClientSharedMemory_C_API.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClientSharedMemory_C_API.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClientC_API.cpp
 
-		../../examples/SharedMemory/PhysicsClientC_API.h
-		../../examples/SharedMemory/SharedMemoryPublic.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClientC_API.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/SharedMemoryPublic.h
 
-		../../examples/SharedMemory/Win32SharedMemory.cpp
-		../../examples/SharedMemory/Win32SharedMemory.h
-		../../examples/SharedMemory/PosixSharedMemory.cpp
-		../../examples/SharedMemory/PosixSharedMemory.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/Win32SharedMemory.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/Win32SharedMemory.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PosixSharedMemory.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PosixSharedMemory.h
 
-		../../examples/Utils/b3ResourcePath.cpp
-		../../examples/Utils/b3ResourcePath.h
-		../../examples/Utils/RobotLoggingUtil.cpp
-		../../examples/Utils/RobotLoggingUtil.h
-		../../examples/Utils/b3Clock.cpp
-		../../examples/Utils/b3ResourcePath.cpp
-		../../examples/Utils/b3ERPCFMHelper.hpp
-		../../examples/Utils/b3ReferenceFrameHelper.hpp
-		../../examples/Utils/ChromeTraceUtil.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Utils/b3ResourcePath.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Utils/b3ResourcePath.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Utils/RobotLoggingUtil.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Utils/RobotLoggingUtil.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Utils/b3Clock.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Utils/b3ResourcePath.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Utils/b3ERPCFMHelper.hpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Utils/b3ReferenceFrameHelper.hpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Utils/ChromeTraceUtil.cpp
 
-		../../examples/ThirdPartyLibs/tinyxml/tinystr.cpp
-		../../examples/ThirdPartyLibs/tinyxml/tinyxml.cpp
-		../../examples/ThirdPartyLibs/tinyxml/tinyxmlerror.cpp
-		../../examples/ThirdPartyLibs/tinyxml/tinyxmlparser.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/tinyxml/tinystr.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/tinyxml/tinyxml.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/tinyxml/tinyxmlerror.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/tinyxml/tinyxmlparser.cpp
 
-		../../examples/ThirdPartyLibs/Wavefront/tiny_obj_loader.cpp
-		../../examples/ThirdPartyLibs/Wavefront/tiny_obj_loader.h
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/Wavefront/tiny_obj_loader.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/Wavefront/tiny_obj_loader.h
 
-		../../examples/ThirdPartyLibs/stb_image/stb_image.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/stb_image/stb_image.cpp
 
-		../../examples/ThirdPartyLibs/BussIK/Jacobian.cpp
-		../../examples/ThirdPartyLibs/BussIK/LinearR2.cpp
-		../../examples/ThirdPartyLibs/BussIK/LinearR3.cpp
-		../../examples/ThirdPartyLibs/BussIK/LinearR4.cpp
-		../../examples/ThirdPartyLibs/BussIK/MatrixRmn.cpp
-		../../examples/ThirdPartyLibs/BussIK/Misc.cpp
-		../../examples/ThirdPartyLibs/BussIK/Node.cpp
-		../../examples/ThirdPartyLibs/BussIK/Tree.cpp
-		../../examples/ThirdPartyLibs/BussIK/VectorRn.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/BussIK/Jacobian.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/BussIK/LinearR2.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/BussIK/LinearR3.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/BussIK/LinearR4.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/BussIK/MatrixRmn.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/BussIK/Misc.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/BussIK/Node.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/BussIK/Tree.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/ThirdPartyLibs/BussIK/VectorRn.cpp
 
-		../../examples/Importers/ImportColladaDemo/LoadMeshFromCollada.cpp
-		../../examples/Importers/ImportObjDemo/LoadMeshFromObj.cpp
-		../../examples/Importers/ImportObjDemo/Wavefront2GLInstanceGraphicsShape.cpp
-		../../examples/Importers/ImportMJCFDemo/BulletMJCFImporter.cpp
-		../../examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp
-		../../examples/Importers/ImportURDFDemo/MyMultiBodyCreator.cpp
-		../../examples/Importers/ImportURDFDemo/URDF2Bullet.cpp
-		../../examples/Importers/ImportURDFDemo/UrdfParser.cpp
-		../../examples/Importers/ImportURDFDemo/urdfStringSplit.cpp
-		../../examples/Importers/ImportMeshUtility/b3ImportMeshUtility.cpp 
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Importers/ImportColladaDemo/LoadMeshFromCollada.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Importers/ImportObjDemo/LoadMeshFromObj.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Importers/ImportObjDemo/Wavefront2GLInstanceGraphicsShape.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Importers/ImportMJCFDemo/BulletMJCFImporter.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Importers/ImportURDFDemo/MyMultiBodyCreator.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Importers/ImportURDFDemo/URDF2Bullet.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Importers/ImportURDFDemo/UrdfParser.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Importers/ImportURDFDemo/urdfStringSplit.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/Importers/ImportMeshUtility/b3ImportMeshUtility.cpp
 
-		../../examples/MultiThreading/b3PosixThreadSupport.cpp
-		../../examples/MultiThreading/b3Win32ThreadSupport.cpp
-		../../examples/MultiThreading/b3ThreadSupportInterface.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/MultiThreading/b3PosixThreadSupport.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/MultiThreading/b3Win32ThreadSupport.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../examples/MultiThreading/b3ThreadSupportInterface.cpp
 
-		../../Extras/InverseDynamics/btMultiBodyTreeCreator.cpp
-		../../Extras/InverseDynamics/CloneTreeCreator.cpp
-		../../Extras/InverseDynamics/CoilCreator.cpp
-		../../Extras/InverseDynamics/DillCreator.cpp
-		../../Extras/InverseDynamics/IDRandomUtil.cpp
-		../../Extras/InverseDynamics/invdyn_bullet_comparison.cpp
-		../../Extras/InverseDynamics/MultiBodyNameMap.cpp
-		../../Extras/InverseDynamics/MultiBodyTreeCreator.cpp
-		../../Extras/InverseDynamics/MultiBodyTreeDebugGraph.cpp
-		../../Extras/InverseDynamics/RandomTreeCreator.cpp
-		../../Extras/InverseDynamics/SimpleTreeCreator.cpp
-		../../Extras/InverseDynamics/User2InternalIndex.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/btMultiBodyTreeCreator.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/CloneTreeCreator.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/CoilCreator.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/DillCreator.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/IDRandomUtil.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/invdyn_bullet_comparison.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/MultiBodyNameMap.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/MultiBodyTreeCreator.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/MultiBodyTreeDebugGraph.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/RandomTreeCreator.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/SimpleTreeCreator.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/InverseDynamics/User2InternalIndex.cpp
 
-		../../Extras/Serialize/BulletFileLoader/bFile.cpp
-		../../Extras/Serialize/BulletFileLoader/bDNA.cpp
-		../../Extras/Serialize/BulletFileLoader/bChunk.cpp
-		../../Extras/Serialize/BulletFileLoader/btBulletFile.cpp
-		../../Extras/Serialize/BulletWorldImporter/btBulletWorldImporter.cpp
-		../../Extras/Serialize/BulletWorldImporter/btWorldImporter.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/Serialize/BulletFileLoader/bFile.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/Serialize/BulletFileLoader/bDNA.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/Serialize/BulletFileLoader/bChunk.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/Serialize/BulletFileLoader/btBulletFile.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/Serialize/BulletWorldImporter/btBulletWorldImporter.cpp
+		${CMAKE_CURRENT_SOURCE_DIR}/../Extras/Serialize/BulletWorldImporter/btWorldImporter.cpp
 )
 
 ADD_DEFINITIONS(-DPHYSICS_SERVER_DIRECT)
@@ -145,19 +145,18 @@ TARGET_LINK_LIBRARIES(PhysicsClientC_API BulletSoftBody BulletDynamics BulletCol
 
 IF (INSTALL_LIBS)
 	INSTALL(FILES
-		../examples/SharedMemory/PhysicsClientC_API.h
-		../examples/SharedMemory/PhysicsClientSharedMemory_C_API.h
-		../examples/SharedMemory/PhysicsClientSharedMemory2_C_API.h
-		../examples/SharedMemory/PhysicsDirectC_API.h
-		../examples/SharedMemory/PhysicsClientUDP_C_API.h
-		../examples/SharedMemory/SharedMemoryInProcessPhysicsC_API.h
-		../examples/SharedMemory/SharedMemoryPublic.h
-		DESTINATION include/bullet
-		)
+	  ${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClientC_API.h
+	  ${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClientSharedMemory_C_API.h
+	  ${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClientSharedMemory2_C_API.h
+	  ${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsDirectC_API.h
+	  ${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/PhysicsClientUDP_C_API.h
+	  ${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/SharedMemoryInProcessPhysicsC_API.h
+	  ${CMAKE_CURRENT_SOURCE_DIR}/../examples/SharedMemory/SharedMemoryPublic.h
+	  DESTINATION include/bullet
+	  )
 	INSTALL(TARGETS
-		PhysicsClientC_API
-		LIBRARY DESTINATION lib${LIB_SUFFIX}
-		ARCHIVE DESTINATION lib${LIB_SUFFIX}
-		)
+	  PhysicsClientC_API
+	  LIBRARY DESTINATION lib${LIB_SUFFIX}
+	  ARCHIVE DESTINATION lib${LIB_SUFFIX}
+	  )
 ENDIF (INSTALL_LIBS)
-
